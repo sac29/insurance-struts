@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2015 12:33:15 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="insurance.CustPolicyDetails" table="cust_policy_details" catalog="insurance">
+        <id name="cpdid" type="java.lang.Integer">
+            <column name="cpdid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="policies" class="insurance.Policies" fetch="select">
+            <column name="pid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="customer" class="insurance.Customer" fetch="select">
+            <column name="cid" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

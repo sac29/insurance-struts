@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+   
+     <definition name="/user.home" template="/Layout.jsp">
+    <put-attribute name="title" value="" />
+      <put-attribute name="header" value="/header.jsp"/>
+    
+      <put-attribute name="body"   value="/body.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
+   </definition>
+   <definition name="/chairman.login" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/chairmanlogin.jsp"/>
+   </definition>
+   <definition name="/chairman.home" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/chairmanhome.jsp"/>
+   </definition>
+   <definition name="/policy.home" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/policyregistration.jsp"/>
+   </definition>
+   <definition name="/manager.home" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/managerregistration.jsp"/>
+   </definition>
+   <definition name="/customer.home" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/customerhome.jsp"/>
+   </definition>
+   <definition name="/registration.home" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/customerregistration.jsp"/>
+   </definition>
+   <definition name="/customer.reg" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/custsuccess.jsp"/>
+   </definition>
+   <definition name="/policy.reg" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/policyreg.jsp"/>
+   </definition>
+   <definition name="/policyreg" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/custsuccess.jsp"/>
+   </definition>
+   <definition name="/cust.login" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/customerlogin.jsp"/>
+   </definition>
+   <definition name="/pay.page" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/paypremium.jsp"/>
+   </definition>
+    <definition name="/thanks.page" extends="/user.home">
+       <put-attribute name="body" value="/customer-module/paythank.jsp"/>
+   </definition>
+   <definition name="/manager.login" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/managerlogin.jsp"/>
+   </definition>
+   <definition name="/manag.home" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/managerhome.jsp"/>
+   </definition>
+    <definition name="/agent.reg" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/agentregister.jsp"/>
+   </definition>
+   <definition name="/agent.succ" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/agentsuccess.jsp"/>
+   </definition>
+    <definition name="/policydetails" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/policydetails.jsp"/>
+   </definition>
+   <definition name="/agentsdetails" extends="/user.home">
+       <put-attribute name="body" value="/manager-module/agentsdetails.jsp"/>
+   </definition>
+   <definition name="/managerdetails" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/managerdetails.jsp"/>
+   </definition>
+   <definition name="/customerdetails" extends="/user.home">
+       <put-attribute name="body" value="/chairman-module/customerdetails.jsp"/>
+   </definition>
+</tiles-definitions>

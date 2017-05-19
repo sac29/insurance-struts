@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2015 12:33:15 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="insurance.PolicyRegistration" table="policy_registration" catalog="insurance">
+        <id name="policyNo" type="java.lang.Integer">
+            <column name="policyNo" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="agents" class="insurance.Agents" fetch="select">
+            <column name="agentCode" />
+        </many-to-one>
+        <many-to-one name="customer" class="insurance.Customer" fetch="select">
+            <column name="cid" />
+        </many-to-one>
+        <property name="planamount" type="double">
+            <column name="planamount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="installemnt" type="double">
+            <column name="installemnt" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="paidamount" type="java.lang.Double">
+            <column name="paidamount" precision="22" scale="0" />
+        </property>
+        <property name="sumassured" type="double">
+            <column name="sumassured" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="balance" type="java.lang.Double">
+            <column name="balance" precision="22" scale="0" />
+        </property>
+        <property name="term" type="int">
+            <column name="term" not-null="true" />
+        </property>
+        <property name="regdate" type="timestamp">
+            <column name="regdate" length="19" not-null="true" />
+        </property>
+        <property name="nominee" type="string">
+            <column name="nominee" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="installmentType" type="string">
+            <column name="installmentType" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,126 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" 
+                         class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+        <action name="welcome" class="ActionClasses.welcomeAction">
+            <result type="tiles" name="success">/user.home</result>
+        </action>
+        <action name="chairmanlogin" class="ActionClasses.chairmanLoginPage">
+            <result type="tiles" name="success">/chairman.login</result>
+            <result type="tiles" name="error">/user.home</result>
+        </action>
+        <action name="chairmanhome" class="ActionClasses.chaimanAction">
+            <result type="tiles" name="success">/chairman.home</result>
+            <result type="tiles" name="error">/chairman.login</result>
+        </action>
+        <action name="policydetails" class="ActionClasses.policy">
+            <result type="tiles" name="success">/policy.home</result>
+            <result type="tiles" name="error">/chairman.home</result>
+        </action>
+        <action name="policyreg" class="ActionClasses.policyAction">
+            <result type="tiles" name="success">/policy.home</result>
+        </action>
+        <action name="managerdetails" class="ActionClasses.manager" method="getLoc">
+            <result type="tiles" name="success">/manager.home</result>
+        </action>
+        <action name="managerreg" class="ActionClasses.managerAction">
+            <interceptor-ref name="fileUpload" >
+                <param name="allowedType">image/jpg,image/jpeg</param>
+                <param name="maximumSize">2097152</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result type="tiles" name="success">/manager.home</result>
+            <result type="tiles" name="input">/manager.home</result>
+         </action>
+        <action name="customer">
+            <result type="tiles" name="success">/customer.home</result>
+        </action>
+        
+        <action name="customerregis" class="ActionClasses.customer" method="getState">
+            <result type="tiles" name="success">/registration.home</result>
+        </action>
+        <action name="customerreg" class="ActionClasses.customerAction">
+            <interceptor-ref name="fileUpload" >
+                <param name="allowedType">image/jpg,image/jpeg</param>
+                <param name="maximumSize">2097152</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result type="tiles" name="success">/customer.reg</result>
+            <result type="tiles" name="input">/customer.reg</result>
+        </action>
+        <action name="policyregistration">
+            <result type="tiles" name="success">/policy.reg</result>
+        </action>
+        <action name="policyreg" class="ActionClasses.policyregAction">
+            <result type="tiles" name="success">/policyreg</result>
+             <result type="tiles" name="input">/policyreg</result>
+        </action>
+       <action name="custlogin">
+            <result type="tiles" name="success">/cust.login</result>
+        </action>
+        <action name="customerlogin" class="ActionClasses.customerLogin">
+            <result type="tiles" name="success">/pay.page</result>
+            <result type="tiles" name="error">/cust.login</result>
+        </action>
+        <action name="paypremium" class="ActionClasses.payAction">
+            <result type="tiles" name="success">/thanks.page</result>
+            <result type="tiles" name="error">/pay.page</result>
+        </action>
+        <action name="managerlogin">
+            <result type="tiles" name="success">/manager.login</result>
+        </action>
+        <action name="managerlog" class="ActionClasses.managerlogAction">
+            <result type="tiles" name="success">/manag.home</result>
+            <result type="tiles" name="error">/manager.login</result>
+        </action>
+        <action name="agentreg">
+            <result type="tiles" name="success">/agent.reg</result>
+        </action>
+        <action name="agentregister" class="ActionClasses.agentAction">
+            <interceptor-ref name="fileUpload" >
+                <param name="allowedType">image/jpg,image/jpeg</param>
+                <param name="maximumSize">2097152</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result type="tiles" name="success">/agent.succ</result>
+            <result type="tiles" name="input">/agent.succ</result>
+         </action>
+         
+        <action name="viewpolicy" class="ActionClasses.policyUtility" method="getAllPolicyData">
+            <result type="tiles" name="success">/policydetails</result>
+            <result type="tiles" name="error">/manager.login</result>
+        </action>
+        
+        <action name="viewagents" class="ActionClasses.agentUtility" method="getAllAgentData">
+            <result type="tiles" name="success">/agentsdetails</result>
+            <result type="tiles" name="error">/agentsdetails</result>
+        </action>
+         <action name="showImagea" class="ActionClasses.agentAction" method="getImagea">
+            <result name="success"/>
+        </action>
+        
+        <action name="viewmanagers" class="ActionClasses.managerUtility" method="getAllMangerData">
+            <result type="tiles" name="success">/managerdetails</result>
+            <result type="tiles" name="error">/managerdetails</result>
+        </action>
+         <action name="showImagem" class="ActionClasses.managerAction" method="getImagem">
+            <result name="success"/>
+        </action>
+        
+        <action name="viewcustomers" class="ActionClasses.customerUtility" method="getAllCustomerData">
+            <result type="tiles" name="success">/customerdetails</result>
+            <result type="tiles" name="error">/customerdetails</result>
+        </action>
+         <action name="showImage" class="ActionClasses.customerAction" method="getImage">
+            <result name="success"/>
+        </action>
+        
+    </package>
+</struts>

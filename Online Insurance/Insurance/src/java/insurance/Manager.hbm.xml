@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2015 12:33:15 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="insurance.Manager" table="manager" catalog="insurance">
+        <id name="mid" type="java.lang.Integer">
+            <column name="mid" />
+            <generator class="identity" />
+        </id>
+        <property name="mgrssn" type="int">
+            <column name="mgrssn" not-null="true" />
+        </property>
+        <property name="mname" type="string">
+            <column name="mname" length="45" not-null="true" />
+        </property>
+        <property name="maddress" type="string">
+            <column name="maddress" length="45" not-null="true" />
+        </property>
+        <property name="location" type="string">
+            <column name="location" length="45" not-null="true" />
+        </property>
+        <property name="mgender" type="string">
+            <column name="mgender" length="45" not-null="true" />
+        </property>
+        <property name="mbdate" type="timestamp">
+            <column name="mbdate" length="19" not-null="true" />
+        </property>
+        <property name="mage" type="int">
+            <column name="mage" not-null="true" />
+        </property>
+        <property name="mpassword" type="string">
+            <column name="mpassword" length="45" not-null="true" />
+        </property>
+        <property name="mphoto" type="binary">
+            <column name="mphoto" />
+        </property>
+    </class>
+</hibernate-mapping>

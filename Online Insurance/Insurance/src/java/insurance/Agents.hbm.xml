@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 18, 2015 12:33:15 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="insurance.Agents" table="agents" catalog="insurance">
+        <id name="agentCode" type="java.lang.Integer">
+            <column name="agentCode" />
+            <generator class="identity" />
+        </id>
+        <property name="aname" type="string">
+            <column name="aname" length="45" not-null="true" />
+        </property>
+        <property name="AAddress" type="string">
+            <column name="a_address" length="45" not-null="true" />
+        </property>
+        <property name="abdate" type="timestamp">
+            <column name="abdate" length="19" not-null="true" />
+        </property>
+        <property name="agender" type="string">
+            <column name="agender" length="45" not-null="true" />
+        </property>
+        <property name="age" type="int">
+            <column name="age" not-null="true" />
+        </property>
+        <property name="commission" type="java.lang.Double">
+            <column name="commission" precision="22" scale="0" />
+        </property>
+        <property name="aphoto" type="binary">
+            <column name="aphoto" />
+        </property>
+        <property name="apassword" type="string">
+            <column name="apassword" length="45" not-null="true" />
+        </property>
+        <set name="policyRegistrations" table="policy_registration" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="agentCode" />
+            </key>
+            <one-to-many class="insurance.PolicyRegistration" />
+        </set>
+    </class>
+</hibernate-mapping>
